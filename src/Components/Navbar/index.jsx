@@ -11,7 +11,7 @@ const Navbar = () => {
     
     return (
         <nav className='flex justify-between items-center text-white  fixed z-10 top-0 w-full h-14 py-5 px-8 text-sm  bg-stone-800 '>
-            <h6 className='font-semibold text-3xl ml-14 font-mono'>
+            <h6 className='font-semibold text-3xl ml-10 font-mono'>
                     Shopi 
             </h6>
             <ul className='flex items-center gap-3 absolute left-[40vw]  '>

@@ -27,8 +27,8 @@ const SignIn = () => {
 
   return (
     <Layout>
-    <h2 className="text-3xl md:text-xl xl:text-2xl font-bold mb-4">Sign In</h2>
-    <div className=" flex flex-col rounded-lg  bg-gray-200 w-96 shadow-lg p-8 text-gray-500 h-[450px] mt-20 items-center justify-center">
+    <h2 className="text-3xl font-bold mb-4">Sign In</h2>
+    <div className=" flex flex-col rounded-lg  bg-gray-200 lg:w-96 w-88 shadow-lg p-8 text-gray-500 h-[450px] mt-20 items-center justify-center">
       
       {error && <p className="error-message">{error}</p>}
       <form
