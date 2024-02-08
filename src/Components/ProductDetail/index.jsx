@@ -8,7 +8,7 @@ const ProductDetail = () => {
 
     return (
         <aside 
-        className={`${context.isProductDetailOpen ? 'flex' :'hidden' } product-detail flex flex-col fixed right-1 w-72 border max-md:hidden
+        className={`${context.isProductDetailOpen ? 'flex' :'hidden' } product-detail bg-white flex flex-col fixed right-1 w-72 border 
                 border-grey rounded-md `}>
             <div className='flex justify-between items-center p-2'>
             <h2 className='font-medium text-2xl'>Detail</h2>

@@ -3,6 +3,7 @@ import Layout from '../../Components/Layout'
 import Card from '../../Components/Card'
 import { ShoppingCartContext } from '../../Context'
 import ProductDetail from '../../Components/ProductDetail'
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 
 
 
@@ -36,6 +37,7 @@ return (
         placeholder='Search a product'
         className='w-80 mb-5 p-3 border border-black rounded-md focus:outline-none' 
         onChange={(event)  => context.setSearchByTitle(event.target.value)} />
+        <MagnifyingGlassIcon className="w- h-4 text-gray-400 absolute right-[40vw] top-36"></MagnifyingGlassIcon>
       
       <div className='grid gap-12 grid-cols-4  w-fullmax-w-screen-lg  max-md:grid-cols-2 '>
         {renderView()}

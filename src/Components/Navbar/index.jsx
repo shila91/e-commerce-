@@ -6,19 +6,16 @@ import {ShoppingCartContext} from '../../Context'
 
 const Navbar = () => {
     const context = useContext(ShoppingCartContext)
-    const activeStyle = 'underline underline-offset-4'
-
+    const activeStyle = 'underline underline-offset-8 decoration-2 decoration-white font-semibold text-md shadow-sm uppercase'
+    
     
     return (
-        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
-            <ul className='flex items-center gap-3 '>
-                <li className='font-semibold text-lg '>
-                    <NavLink 
-                        to ='/'>
-                        Shopi 
-                    </NavLink>
-                </li>
-                <li>
+        <nav className='flex justify-between items-center text-white  fixed z-10 top-0 w-full h-14 py-5 px-8 text-sm  bg-stone-800 '>
+            <h6 className='font-semibold text-3xl ml-14 font-mono'>
+                    Shopi 
+            </h6>
+            <ul className='flex items-center gap-3 absolute left-[40vw]  '>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/all'
                     onClick={() => context.setSearchByCategory('')}
@@ -28,7 +25,7 @@ const Navbar = () => {
                         All 
                     </NavLink>
                 </li>
-                <li>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/clothes'
                     onClick={() => context.setSearchByCategory('clothes')}
@@ -37,7 +34,7 @@ const Navbar = () => {
                         Clothes 
                     </NavLink>
                 </li>
-                <li>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/electronics'
                     onClick={() => context.setSearchByCategory('electronics')}
@@ -46,7 +43,7 @@ const Navbar = () => {
                         Electronics 
                     </NavLink>
                 </li>
-                <li>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/furniture'
                     onClick={() => context.setSearchByCategory('furniture')}
@@ -55,7 +52,7 @@ const Navbar = () => {
                         Furniture
                     </NavLink>
                 </li>
-                <li>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/shoes'
                     onClick={() => context.setSearchByCategory('shoes')}
@@ -63,7 +60,8 @@ const Navbar = () => {
                     isActive ? activeStyle : undefined}>
                         Shoes 
                     </NavLink>
-                </li><li>
+                </li>
+                <li className='hidden md:block'>
                     <NavLink 
                     to='/others'
                     onClick={() => context.setSearchByCategory('others')}
@@ -74,7 +72,7 @@ const Navbar = () => {
                 </li>
             </ul>
             <ul className='flex items-center gap-3 '>
-                <li className='text-black/60'>
+                <li className='text-sm font-semibold text-gray-300/60 hidden md:block'>
                     sheila@platzi.com
                 </li>
                 <li>
@@ -92,11 +90,23 @@ const Navbar = () => {
                         Sign In 
                     </NavLink>
                 </li>
-                <li className="flex items-center">
-                    <ShoppingBagIcon className='w-6 h-6 cursor-pointer'></ShoppingBagIcon>
-                    <div>{ context.cartProducts.length}</div>
-
+                <li>
+                    <NavLink to='/my-account'
+                    className={({ isActive }) =>
+                    isActive ? activeStyle : undefined}>
+                    <ShoppingBagIcon   className='w-6 h-6 cursor-pointer'>
+                    </ShoppingBagIcon> 
+                    </NavLink>
                 </li>
+                    <div>{ context.cartProducts.length}</div>
+                
+                    <NavLink>
+                    
+              
+                
+                </NavLink>
+
+                
             </ul>
         </nav>
     )
