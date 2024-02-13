@@ -41,11 +41,11 @@ export const ShoppingCartProvider = ({children}) => {
    
 
     useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products/limit?offset=3')
+    fetch('https://api.escuelajs.co/api/v1/products/')
     .then(response => response.json())
     .then(data => {
         // Excluir los primeros tres elementos
-    const itemsExcludingFirstThree = data.slice(3);
+    const itemsExcludingFirstThree = data.slice(1);
     setItems(itemsExcludingFirstThree);});}, 
     []);
 
