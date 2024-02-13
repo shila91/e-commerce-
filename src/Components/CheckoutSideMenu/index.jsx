@@ -15,6 +15,7 @@ const CheckoutSideMenu = () => {
       const filteredProducts = context.cartProducts.filter(product => product.id !== id)
       context.setCartProducts(filteredProducts)
     }
+    
 
     const handleCheckout = () => {
       const orderToAdd = {
@@ -27,13 +28,17 @@ const CheckoutSideMenu = () => {
     context.setOrder([...context.order, orderToAdd])
     context.setCartProducts([])
     context.setSearchByTitle(null)
+    context.closeCheckoutSideMenu();
+    history.push('/my-orders/last');
+    
     }
+
     
   
 
     return (
         <aside 
-        className={`${context.isCheckoutSideMenuOpen ? 'flex' :'hidden' } checkout-side-menu  flex flex-col fixed  right-1 w-[325px] h-[430px] border-2 max-md:hidden
+        className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden' } checkout-side-menu  flex flex-col fixed right-0 w-[300px] lg:w-[325px] lg:h-[490px]  h-[350px] border-2 
                 border-black bg-white rounded-md`}>
             <div className='flex  justify-between items-center p-7'>
             <h2 className='font-medium text-2xl'>My order</h2>
@@ -64,8 +69,14 @@ const CheckoutSideMenu = () => {
               </p>
               <Link to ='/my-orders/last'>
                 <button 
-                  className='bg-black text-white p-3 w-full rounded-lg'
-                  onClick={() => handleCheckout ()}>Checkout</button>
+                  className='bg-black text-white p-2 w-full rounded-lg'
+                  onClick={() => handleCheckout ()}
+                  >Checkout</button>
+              </Link>
+              <Link to ='/all'>
+                <button 
+                  className='bg-black text-white p-3 mt-2 w-full rounded-lg'
+                  onClick={() => context.closeCheckoutSideMenu ()}>Continue shopping</button>
               </Link>
               
             </div>

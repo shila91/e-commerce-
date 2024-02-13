@@ -36,10 +36,12 @@ export const ShoppingCartProvider = ({children}) => {
 
     //Get products by category
     const [searchByCategory, setSearchByCategory] = useState(null)
+
     
+   
 
     useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products/')
+    fetch('https://api.escuelajs.co/api/v1/products/limit?offset=3')
     .then(response => response.json())
     .then(data => {
         // Excluir los primeros tres elementos

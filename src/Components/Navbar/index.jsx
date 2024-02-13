@@ -7,8 +7,9 @@ import {ShoppingCartContext} from '../../Context'
 const Navbar = () => {
     const context = useContext(ShoppingCartContext)
     const activeStyle = 'underline underline-offset-8 decoration-2 decoration-white font-semibold text-md shadow-sm uppercase'
-    
-    
+
+
+
     return (
         <nav className='flex justify-between items-center text-white  fixed z-10 top-0 w-full h-14 py-5 px-8 text-sm  bg-stone-800 '>
             <h6 className='font-semibold text-3xl ml-10 font-mono'>
@@ -91,20 +92,15 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/my-account'
-                    className={({ isActive }) =>
-                    isActive ? activeStyle : undefined}>
-                    <ShoppingBagIcon   className='w-6 h-6 cursor-pointer'>
-                    </ShoppingBagIcon> 
-                    </NavLink>
-                </li>
-                    <div>{ context.cartProducts.length}</div>
-                
-                    <NavLink>
                     
-              
+                    <ShoppingBagIcon   
+                    onClick={() => context.openCheckoutSideMenu()} className='w-6 h-6 cursor-pointer'>
+                    </ShoppingBagIcon> 
+                    
+                </li>
+                    <div>{context.cartProducts.length}</div>
                 
-                </NavLink>
+            
 
                 
             </ul>
